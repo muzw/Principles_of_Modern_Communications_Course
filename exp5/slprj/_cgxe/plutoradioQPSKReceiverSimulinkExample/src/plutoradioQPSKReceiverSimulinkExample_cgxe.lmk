@@ -1,0 +1,52 @@
+CC     = "D:\software\MATLAB\R2020b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "D:\software\MATLAB\R2020b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "D:\software\MATLAB\R2020b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -w -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec  
+LDFLAGS = -s -dll -L"D:\software\MATLAB\R2020b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"c_mexapi_version.obj"\
+	"lccstub.obj"\
+	"plutoradioQPSKReceiverSimulinkExample_cgxe.obj"\
+	"m_Ub7GGzRGjzUCBR85QYKIZC.obj"\
+	"m_vHAnMVmLh1CgCfSUJQTdXF.obj"\
+	"m_n9qiS3NZi3czNDinGQRyrD.obj"\
+	"m_0c6M2Z1we8wWJZV74qc7u.obj"\
+	"plutoradioQPSKReceiverSimulinkExample_cgxe_registry.obj"\
+	"plutoradioQPSKReceiverSimulinkExample_cgxe.def"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmx.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmex.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmat.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libut.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmwcgxert.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmwslexec_simbridge.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmwslccrt.lib"\
+	"D:\software\MATLAB\R2020b\lib\win64\libmwipp.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libcovrt.lib"\
+	"D:\software\MATLAB\R2020b\extern\lib\win64\microsoft\libmwsl_sfcn_cov_bridge.lib"\
+
+INCLUDE_PATH= -I"D:\software\MATLAB\R2020b\extern\include"  -I"D:\software\MATLAB\R2020b\simulink\include"  -I"D:\software\MATLAB\R2020b\rtw\c\src"  -I"D:\education\EE\通信原理\exp5\slprj\_cgxe\plutoradioqpskreceiversimulinkexample\src"  -I"D:\education\EE\通信原理\exp5"  -I"C:\programdata\MATLAB\supportpackages\R2020b\toolbox\shared\sdr\sdrplug\plutoradio_hspdef\plutoradiodemos"  -I"D:\education\EE\通信原理\exp5\slprj\_cprj"  -I"D:\software\MATLAB\R2020b\sys\lcc64\lcc64\include64"  -I"D:\education\EE\通信原理\exp5\slprj\_cgxe\plutoradioQPSKReceiverSimulinkExample\src" 
+ 
+
+plutoradioQPSKReceiverSimulinkExample_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o plutoradioQPSKReceiverSimulinkExample_cgxe.mexw64 @plutoradioQPSKReceiverSimulinkExample_cgxe.lmko
+c_mexapi_version.obj :	"D:\software\MATLAB\R2020b\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "D:\software\MATLAB\R2020b\extern\version\c_mexapi_version.c"
+lccstub.obj :	"D:\software\MATLAB\R2020b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "D:\software\MATLAB\R2020b\sys\lcc64\lcc64\mex\lccstub.c"
+plutoradioQPSKReceiverSimulinkExample_cgxe.obj :	"plutoradioQPSKReceiverSimulinkExample_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "plutoradioQPSKReceiverSimulinkExample_cgxe.c"
+m_Ub7GGzRGjzUCBR85QYKIZC.obj :	"m_Ub7GGzRGjzUCBR85QYKIZC.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_Ub7GGzRGjzUCBR85QYKIZC.c"
+m_vHAnMVmLh1CgCfSUJQTdXF.obj :	"m_vHAnMVmLh1CgCfSUJQTdXF.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_vHAnMVmLh1CgCfSUJQTdXF.c"
+m_n9qiS3NZi3czNDinGQRyrD.obj :	"m_n9qiS3NZi3czNDinGQRyrD.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_n9qiS3NZi3czNDinGQRyrD.c"
+m_0c6M2Z1we8wWJZV74qc7u.obj :	"m_0c6M2Z1we8wWJZV74qc7u.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_0c6M2Z1we8wWJZV74qc7u.c"
+plutoradioQPSKReceiverSimulinkExample_cgxe_registry.obj :	"plutoradioQPSKReceiverSimulinkExample_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "plutoradioQPSKReceiverSimulinkExample_cgxe_registry.c"

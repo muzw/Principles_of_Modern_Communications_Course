@@ -1,0 +1,26 @@
+function [out]=pcm_decode(in,v)
+n=length(in);
+in=reshape(in',8,n/8)';
+slot(1)=0;
+slot(2)=16;
+slot(3)=32;
+slot(4)=64;
+slot(5)=128;
+slot(6)=256;
+slot(7)=512;
+slot(8)=1024;
+step(1)=1;
+step(2)=1;
+step(3)=2;
+step(4)=4;
+step(5)=8;
+step(6)=16;
+step(7)=32;
+step(8)=64;
+for i=1:n/8
+ ss=2*in(i,1)-1;
+ tmp=in(i,2)*4+in(i,3)*2+in(i,4)+1;
+ st=slot(tmp);
+ dt=(in(i,5)*8+in(i,6)*4+in(i,7)*2+in(i,8))*step(tmp)+0.5*step(tmp);
+ out(i)=ss*(st+dt)/2048*v;
+end
